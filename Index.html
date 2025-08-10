@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ChatJet</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+    <div id="chat-container">
+        <div id="messages"> <!-- Hier kommen die Chat-Nachrichten rein --> </div>
+        <input type="text" id="userInput" placeholder="Gib deine Nachricht ein..." />
+        <button onclick="sendMessage()">Senden</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      // Service Worker registrieren für PWA (offline + Installation)
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('Service Worker registriert'))
+          .catch(err => console.error('Service Worker Fehler:', err));
+      }
+    </script>
+</body>
+</html>
